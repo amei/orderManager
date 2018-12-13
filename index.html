@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Order Book</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patua+One|Roboto:300">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>订单记录</h1>
+        <p>An order book application built with Javascript (ES6)</p>
+    </header>
+
+    <div id="app">
+        
+        <form id="app__controls">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="controls__input">
+                            <label>日期</label>
+                            <input type="date" class="form-control" id="order-date" required autofocus>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="controls__input">
+                            <label>订单号</label>
+                            <input type="number" class="form-control" id="order-amount" min="1" step="1" value="1" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="controls__input">
+                            <label>价钱</label>
+                            <input type="number" class="form-control" id="order-price" min="0.01" step="0.01" value="0.0" required>
+                        </div>
+                    </div>
+		　　　<div class="col-sm-2">
+                        <div class="controls__select">
+			　　　　<label>订单来源</label>
+                            <select name=""> 
+			　　　　　　<option value="0">京东订单</option> 
+			　　　　　　<option value="1">苏宁订单</option> 
+			　　　　　　<option value="２">淘宝订单</option> 
+			　　　　</select> 
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1">
+                        <div class="controls__buttons">
+                            <button type="submit" class="btn btn-primary">提交订单</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="controls__buttons float-right">
+<!--
+                            <a class="btn btn-outline-primary" href="javascript:;" role="button" id="control-import">import orders</a>
+-->
+                            <a class="btn btn-outline-primary" href="javascript:;" role="button" id="control-delete">全部删除</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div id="messageView"></div>
+
+        <div id="app__table">
+            <div class="container">
+                <div id="orderListView"></div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="node_modules/systemjs/dist/system.js"></script>   
+    <script>
+        System.defaultJSExtensions = true;
+        System.import('assets/js/dist/app').catch(function(err){ 
+            console.error(err);
+        });
+    </script>
+</body>
+</html>

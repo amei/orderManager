@@ -1,0 +1,21 @@
+{
+  "name": "orderbook",
+  "version": "1.0.0",
+  "description": "An order book application built with Javascript (ES6)",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node _server/server.js",
+    "build": "babel assets/js/src -d assets/js/dist --source-maps",
+    "watch": "babel assets/js/src -d assets/js/dist --source-maps --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "systemjs": "^0.19.31",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-systemjs": "^6.9.0",
+    "babel-preset-es2015": "^6.24.1",
+    "body-parser": "^1.15.1",
+    "express": "^4.12.3"
+  }
+}
